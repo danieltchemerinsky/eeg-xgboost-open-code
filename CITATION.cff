@@ -12,25 +12,25 @@ authors:
   - family-names: "Del Pin"
     given-names: "Simon Hviid"
     affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0001-7512-3740"
   - family-names: "Duez"
     given-names: "Christophe Henri Valdemar"
     affiliation: "Department of Clinical Neurophysiology, Aarhus University Hospital, Aarhus, Denmark"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0001-7560-9214"
   - family-names: "Tchemerinsky Konieczny"
     given-names: "Daniel"
     affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
     email: "daniel.tchemerinsky@cfin.au.dk"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0003-4003-0514"
   - family-names: "Johnsen"
     given-names: "Birger"
     affiliation: "Department of Clinical Neurophysiology, Aarhus University Hospital, Aarhus, Denmark"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0002-6516-8010"
   - family-names: "Sandberg"
     given-names: "Kristian"
     affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
     email: "kristian.sandberg@cfin.au.dk"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0001-6936-5487"
 keywords:
   - cardiac arrest
   - EEG reactivity
@@ -39,7 +39,6 @@ keywords:
   - machine learning
   - Cerebral Performance Category
 repository-code: "https://github.com/danieltchemerinsky/eeg-xgboost-open-code"
-# Fill in once a GitHub release has been archived by Zenodo:
-# doi: "10.5281/zenodo.XXXXXXX"
-# version: "1.0.0"
-# date-released: "2026-XX-XX"
+doi: "10.5281/zenodo.22921408"
+version: "1.0.0"
+date-released: "2026-09-23"

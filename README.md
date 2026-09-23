@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22921408.svg)](https://doi.org/10.5281/zenodo.22921408)
+
 # Predicting neurological outcome for comatose cardiac arrest patients from early EEG reactivity data by use of machine learning
 
 Analysis code for Del Pin, Duez, Tchemerinsky Konieczny, Johnsen & Sandberg.
