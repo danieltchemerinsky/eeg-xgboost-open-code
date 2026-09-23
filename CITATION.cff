@@ -38,7 +38,7 @@ keywords:
   - XGBoost
   - machine learning
   - Cerebral Performance Category
-repository-code: "https://github.com/REPLACE-ME/eeg-xgboost-open-code"
+repository-code: "https://github.com/danieltchemerinsky/eeg-xgboost-open-code"
 # Fill in once a GitHub release has been archived by Zenodo:
 # doi: "10.5281/zenodo.XXXXXXX"
 # version: "1.0.0"
