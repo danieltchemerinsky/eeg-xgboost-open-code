@@ -319,10 +319,10 @@ generate_figure4_clean <- function(roc_114_react, roc_114_all,
   df_103_a <- get_roc_df(roc_103_all)
 
   # Get AUC values with CI
-  auc_114_r <- round(as.numeric(auc(roc_114_react)), 2)
-  auc_114_a <- round(as.numeric(auc(roc_114_all)), 2)
-  auc_103_r <- round(as.numeric(auc(roc_103_react)), 2)
-  auc_103_a <- round(as.numeric(auc(roc_103_all)), 2)
+  auc_114_r <- sprintf("%.2f", as.numeric(auc(roc_114_react)))
+  auc_114_a <- sprintf("%.2f", as.numeric(auc(roc_114_all)))
+  auc_103_r <- sprintf("%.2f", as.numeric(auc(roc_103_react)))
+  auc_103_a <- sprintf("%.2f", as.numeric(auc(roc_103_all)))
 
   # --- Panel A: N = 114 ---
   panel_a <- ggplot() +
