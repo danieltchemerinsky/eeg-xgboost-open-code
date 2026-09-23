@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper."
+title: "Analysis code for: Predicting neurological outcome for comatose cardiac arrest patients from early EEG reactivity data by use of machine learning"
+abstract: >-
+  Leave-one-out cross-validated XGBoost analysis of EEG reactivity features
+  recorded within 24 hours of cardiac arrest, predicting Cerebral Performance
+  Category at 6 months as a four-class outcome and dichotomised into good
+  (CPC 1-3) versus poor (CPC 4-5) outcome.
+type: software
+license: MIT
+authors:
+  - family-names: "Del Pin"
+    given-names: "Simon Hviid"
+    affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Duez"
+    given-names: "Christophe Henri Valdemar"
+    affiliation: "Department of Clinical Neurophysiology, Aarhus University Hospital, Aarhus, Denmark"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Tchemerinsky Konieczny"
+    given-names: "Daniel"
+    affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
+    email: "daniel.tchemerinsky@cfin.au.dk"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Johnsen"
+    given-names: "Birger"
+    affiliation: "Department of Clinical Neurophysiology, Aarhus University Hospital, Aarhus, Denmark"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Sandberg"
+    given-names: "Kristian"
+    affiliation: "Cognitive Neuroscience Research Unit, CFIN, Aarhus University, Aarhus, Denmark"
+    email: "kristian.sandberg@cfin.au.dk"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - cardiac arrest
+  - EEG reactivity
+  - outcome prediction
+  - XGBoost
+  - machine learning
+  - Cerebral Performance Category
+repository-code: "https://github.com/REPLACE-ME/eeg-xgboost-open-code"
+# Fill in once a GitHub release has been archived by Zenodo:
+# doi: "10.5281/zenodo.XXXXXXX"
+# version: "1.0.0"
+# date-released: "2026-XX-XX"

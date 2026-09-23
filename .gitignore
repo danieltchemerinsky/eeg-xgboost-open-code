@@ -1,0 +1,17 @@
+# R session state — never commit these. An .RData in particular will silently
+# restore stale objects over the ones the scripts create.
+.RData
+.Rhistory
+.Rapp.history
+.Rproj.user/
+*.Rproj
+
+# Data. Not distributed with this repository; see data/README.md and the data
+# availability statement in the paper.
+*.RData
+
+# Everything the analysis produces
+output/
+
+# macOS
+.DS_Store
