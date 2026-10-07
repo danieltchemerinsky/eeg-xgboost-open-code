@@ -64,8 +64,9 @@ params <- list(
   alpha = 0
 )
 
-# Number of boosting rounds (determined by CV on full data)
-# You can adjust this, but 200-300 is reasonable for eta=0.01
+# Number of boosting rounds, chosen beforehand by cross-validation on all 114
+# patients rather than within each fold. 11_nested_cv.R repeats the analysis
+# with the tuning moved inside each fold.
 nrounds <- 750
 
 cat("Hyperparameters:\n")

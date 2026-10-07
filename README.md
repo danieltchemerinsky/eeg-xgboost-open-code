@@ -34,6 +34,8 @@ session, in the order listed, because each uses objects the previous ones leave 
 | `07_render_table2.R` | Formats Table 2 for publication (`gt` / `flextable`). |
 | `08_partial_dependence_values.R` | Exports the partial dependence curves behind Figure S1, and summarises for each panel how much of the variation each outcome class accounts for — so a panel can be described from values rather than read off the plot. |
 | `09_figure1_flowchart.R` | Patient inclusion flowchart (Figure 1). Standalone — derives the EEG, excluded, included and outcome counts from the data, and takes only the two upstream recruitment counts as declared constants. |
+| `10_calibration_and_outcome_definition.R` | Checks on the leave-one-out predictions, with no refit. Calibration of the predicted probability of poor outcome (Brier score and scaled Brier score, calibration intercept and slope, calibration plot = Figure S2), and the good-vs-poor analysis repeated with the guideline outcome definition, CPC 1–2 vs 3–5 (AUC with DeLong interval, the six Table 2 criteria). |
+| `11_nested_cv.R` | Nested cross-validation. Repeats the leave-one-out analysis with the tuning (max_depth and number of boosting rounds, by inner 5-fold CV) done inside each fold, and compares the AUC with the fixed-hyperparameter analysis (paired DeLong test). Slow: roughly 10–20 minutes. |
 
 ## Running it
 
@@ -47,7 +49,8 @@ Rscript run_all.R
 That runs every script in order in one session and writes everything to
 `output/`, including `sessionInfo.txt`. It checks for the data and the required
 packages first, reports each step, and lists the expected outputs at the end.
-About three minutes.
+About three minutes, plus 10–20 minutes for the nested cross-validation
+(`11_nested_cv.R`; set `RUN_NESTED_CV <- FALSE` at the top of `run_all.R` to skip it).
 
 To run the scripts individually instead, work with `output/` as the working
 directory (the scripts read and write relative paths) and keep the order above —
@@ -60,7 +63,9 @@ each uses objects left in the environment by the ones before it. Scripts `06`,
 Multiclass XGBoost (`multi:softprob`, 4 classes), `tree_method = "hist"`, `eta = 0.01`,
 `max_depth = 3`, `min_child_weight = 3`, `gamma = 0.1`, `subsample = 0.8`,
 `colsample_bytree = 0.8`, `lambda = 1`, `alpha = 0`, 750 boosting rounds. Hyperparameters
-are fixed across folds rather than tuned within each fold. The probability of a good outcome
+are fixed across folds rather than tuned within each fold; the number of boosting rounds was
+chosen beforehand by cross-validation on all 114 patients. `11_nested_cv.R` repeats the analysis with the tuning
+inside each fold. The probability of a good outcome
 is the sum of the predicted probabilities for CPC 1, 2 and 3. Scripts 01 and 02 use
 identical settings, and their reactivity-only models agree exactly.
 
@@ -72,7 +77,7 @@ and for the table-rendering scripts `gt`, `flextable` and `officer`.
 `webshot2` and `chromote` are optional: without them the tables are still written as `.docx`
 and `.html`, only the `.png` previews are skipped.
 
-A full run takes about three minutes.
+A full run takes about three minutes, plus 10–20 minutes for the nested cross-validation.
 
 ## Data
 

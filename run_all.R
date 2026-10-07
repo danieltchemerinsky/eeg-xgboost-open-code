@@ -17,9 +17,13 @@
 # Everything produced is written to  output/  . Nothing outside that directory
 # is modified, so the run can be repeated safely.
 #
-# Takes roughly three minutes: the leave-one-out cross-validation fits 114
-# models in script 01 and a further 4 x 114 in script 02.
+# Takes roughly three minutes without the nested cross-validation (script 11):
+# the leave-one-out cross-validation fits 114 models in script 01 and a further
+# 4 x 114 in script 02. Script 11 adds roughly 10-20 minutes; set RUN_NESTED_CV
+# below to FALSE to skip it.
 # ==============================================================================
+
+RUN_NESTED_CV <- TRUE
 
 main <- function() {
 
@@ -133,7 +137,11 @@ main <- function() {
         }),
     run("09  Figure 1 flowchart",             src("09_figure1_flowchart.R")),
     run("06  render Table 1",                 src("06_render_table1.R")),
-    run("07  render Table 2",                 src("07_render_table2.R"))
+    run("07  render Table 2",                 src("07_render_table2.R")),
+    run("10  calibration, CPC 1-2 vs 3-5",    src("10_calibration_and_outcome_definition.R")),
+    if (RUN_NESTED_CV)
+      run("11  nested cross-validation (slow)", src("11_nested_cv.R"))
+    else { cat("  11  nested cross-validation ... skipped (RUN_NESTED_CV = FALSE)\n"); TRUE }
   )
 
   cat("\n")
@@ -152,7 +160,10 @@ main <- function() {
     "figures/Figure2_FeatureImportance.pdf",
     "figures/Figure3_ROC_OneVsAll.pdf",
     "figures/Figure4_ROC_TwoPanel.pdf",
-    "figures/FigureS1_PartialDependence.pdf")
+    "figures/FigureS1_PartialDependence.pdf",
+    "calibration_results.csv", "outcome_definition_cpc12.csv",
+    "figures/FigureS2_Calibration.pdf",
+    if (RUN_NESTED_CV) "nested_cv_summary.csv")
 
   present <- file.exists(expected)
   for (i in seq_along(expected))
